@@ -94,3 +94,10 @@ This script is provided as-is without warranty. Users are responsible for testin
 ---
 
 **Note**: Always test with sample files before using in production environments. The forceful application termination may cause data loss if used with applications containing unsaved work.
+
+
+
+
+
+
+# FOR ME: learn how to end various types of tasks by usage of a batch file or even CMD commands

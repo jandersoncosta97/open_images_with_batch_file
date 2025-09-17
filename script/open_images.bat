@@ -15,7 +15,7 @@ if not exist "%directory%" (
 
 echo Files in directory: "%directory%"
 dir /b "%directory%"
-
+set images_name = dir /b "%directory%"
 rem Loop through each file in the directory
 for %%f in ("%directory%\*.*") do (
     echo Opening: %%~nxf
@@ -28,8 +28,8 @@ for %%f in ("%directory%\*.*") do (
     echo Attempting to close application...
     
     rem This is a generic approach - you may need to customize per file type
-    for /f "tokens=2" %%p in ('tasklist /fi "imagename eq %%f" 2^>nul') do (
-        taskkill /pid %%p /f >nul 2>&1
+    for /f "tokens=4" %%p in ('tasklist /fi /im images_name ) do (
+        taskkill /im images_name
     )
 )
 
@@ -37,4 +37,4 @@ echo All files processed.
 pause
 endlocal
 
-rem FINAL COPY DONE WITH SUPPORT OF DEEPKSEEK https://www.deepseek.com/en
+rem PREVOUS FINAL COPY (ON MAIN) DONE WITH SUPPORT OF DEEPKSEEK https://www.deepseek.com/en
