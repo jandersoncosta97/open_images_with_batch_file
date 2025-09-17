@@ -1,18 +1,18 @@
 @echo off
 setlocal enabledelayedexpansion
 
-rem Set the directory where your files are located
+
 set "example_path=images"
 set "directory=%cd%\%example_path%"
 
-rem Check if directory exists
+
 if not exist "%directory%" (
     echo Directory "%directory%" does not exist!
     pause
     exit /b 1
 )
 
-rem List all files in the directory
+
 echo Files in directory: "%directory%"
 dir /b "%directory%"
 
@@ -24,9 +24,7 @@ for %%f in ("%directory%\*.*") do (
     rem Wait for 4 seconds
     timeout /t 4 /nobreak >nul
     
-    rem Try to close the application (this part may need adjustment)
-    rem Note: taskkill with file extension won't work properly
-    rem You'll need to specify the actual process name
+
     echo Attempting to close application...
     
     rem This is a generic approach - you may need to customize per file type
@@ -38,3 +36,5 @@ for %%f in ("%directory%\*.*") do (
 echo All files processed.
 pause
 endlocal
+
+rem FINAL COPY DONE WITH SUPPORT OF DEEPKSEEK https://www.deepseek.com/en
